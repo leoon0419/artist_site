@@ -1,0 +1,492 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*****共通部分
+***********************************************/
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック", "Yu Gothic", sans-serif;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color:whitesmoke;
+  width: 100%;
+}
+
+/*****ヘッダー*****/
+.header {
+  position: fixed; /* 表示の位置を固定 */
+      top: 0;          /* ページの一番上に固定 */
+      width: 100%;     
+      height: 100px;
+      color: white;
+      text-align: center;
+      align-items: center;
+      padding: 30px 0;
+      z-index: 100;   /* ヘッダーが他の要素より前面に表示されるようにする */
+}
+
+
+.header img {
+  width: 20%;
+  padding-bottom: 20px;
+  color: #000;
+}
+.header img:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+
+/*****メインビジュアル*****/
+.main-visual {
+  width: 100%;
+  
+}
+.main-visual img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+/*****mainページ,共通コンテンツ
+***********************************************/
+.menu {
+  width: 100%;
+  margin-top:30px ;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+.menu h3 {
+  margin:auto 60px;
+  padding: 10px 40px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+.menu a {
+  color: inherit;
+  text-decoration: none;/*リストの点を不可視化*/
+  transition:  0.5;
+}
+.menu h3:hover {
+  color: aliceblue;
+  background-color: rgba(98, 98, 98, 0.5);
+}
+.introduction {
+  width: 70%;
+  margin: 200px auto 200px auto;
+}
+.title_2 {
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+.title_2 h2 {
+  font-size: 30px;
+  margin: 30px auto;
+}
+.subject_p {
+  margin: 80px auto;
+  padding-bottom:80px ;
+  line-height: 3.0;/*行の高さ*/
+  border-bottom:1px solid black ;
+  text-align: center;
+}
+.theme {
+  width: 100%;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);/*左上からxy,xy,xy,xyでと桂馬やりに軸を指定して図形を作る*/
+  margin: 80px auto;
+  padding: 30px 0;
+  font-size: 35px;
+  text-align: center;
+  color: white;
+  background-color:rgba(169, 195, 203, 0.3);
+}
+/**themeを儚げに出現させる設定**/
+/* 初期状態（透明） */
+.theme {
+  opacity: 0;
+  transform: translateY(20px); /* 下から少し上がってくるような動き */
+  transition: opacity 1.0s ease-out, transform 1.5s ease-out; /* アニメーションの時間とイージング */
+}
+
+/* 表示された際の状態 */
+.theme.visible {
+  opacity: 1;
+  transform: translateY(0); /* 元の位置に戻す */
+}
+
+.article {
+  width: 1040px;
+  margin: 200px auto;
+}
+
+.pickup {
+  width: 30%;
+  height: 50px;
+  margin: 20px auto 150px auto;
+  text-align: center;
+}
+.pickup h2 {
+  padding-top: 30px ;
+  font-size: 27px;
+  font-weight:bold;
+  letter-spacing: 4px;/*行間指定*/
+}
+.pickup h6 {
+  font-size: 0.5em;
+  font-weight: lighter;
+  color: rgba(87, 87, 87, 0.5)
+}
+.osusume {
+  width: 100%;
+  display: flex;
+  margin: 150px auto ;
+  padding-left: 52px;/*一旦中央の配列揃えしてる*/
+}
+.pickup_contents {
+  width: 30%;
+}
+.pickup_contents a {
+  text-decoration: none;
+}
+.pickup_contents img {
+  height: 200px;
+  border-radius: 2px;
+  box-shadow: 15px 10px 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のアニメーションを追加 */
+}
+.pickup_contents img:hover {
+  transform: translateY(-10px); /* 少し上に移動する */
+  box-shadow: 15px 10px 25px rgba(0, 0, 0, 0.5); /* 影も強調して表示 */
+}
+
+
+
+.album_title {
+  width: 80%;
+  margin-top: 10px;
+  padding-left: 0.5em;
+  padding-bottom: 5px;
+  color: #000;
+  transition: .2s;
+}
+
+.album_title:hover {
+  color: rgba(175, 9, 64, 0.7);
+}
+
+#top .section {
+  position: relative;
+}
+
+.scroll-top {
+  position: fixed; 
+  bottom: 20px; 
+  right: 20px; 
+  display: none; /* 最初は非表示 */
+  background-color: rgba(50, 50, 50, 0.5);
+  color: white; 
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000; /* 他の要素の上に表示 */
+}
+
+.scroll-top:hover {
+  background-color: #555; 
+}
+
+
+/*****フッター*****/
+.footer {
+  width: 100%;
+  height: 300px;
+  display: table;
+  background-color: rgba(229, 1, 18, 0.8);
+  text-align: center;
+}
+.footer .copyright {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.2em;
+}
+.footer img {
+  width: 300px;
+  height: auto;
+  padding-top: 50px;
+
+}
+.copyright img:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+.sns {
+  width: 100%;
+}
+.sns img {
+  width:30px;
+  margin: 0 10px 50px 10px ;
+}
+.sns img:hover {
+  opacity: 0.3;
+  transition: 0.4s;
+}
+
+
+
+/**********memberページ************/
+
+
+.Person_introduction {
+  width: 100%;
+}
+.page_title {
+  text-align:left;
+  border-bottom: 1px solid rgba(255, 103, 171, 0.7);
+  margin-top: 200px;
+}
+.page_title h2 {
+  font-size: 35px;
+  margin: 30px auto 10px 20px;
+}
+.introduction_box {
+  padding-top: 100px;
+}
+.mini_box {
+  display: block;
+  margin-bottom:100px;
+  padding: 20px 20px 60px 20px;
+  border-bottom: 1px solid rgba(169, 195, 203, 0.6);
+}
+.band_member {
+  width: 50%;
+  float: left;
+  margin: 30px auto;
+  height: 300px;
+  text-align: center;
+  background-color: #fff;
+  border: 2px double rgba(112, 124, 128, 0.6);
+}
+.band_member img {
+  margin:20px auto 30px;
+  clip-path: circle(50%);
+}
+.name_1 {
+  width: 100%;
+}
+.profile {
+  width: 100%;
+  margin:60px 0 auto 40px;
+}
+.profile p {
+  line-height: 3.0;
+}
+.indi {
+  display: flex;
+  width: 100%;
+}
+.etc {
+  width:fit-content;
+  margin-left: 10px;
+  text-indent: 10px;
+  list-style-type: none;
+}
+.etc li {
+  width: 300px;
+  border-bottom: 1px solid black;
+  letter-spacing: 1px;
+  font-weight:initial;
+}
+.sub {
+  display: flex;
+  height: 100px;
+}
+
+.instrument {
+  width: 30%;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+}
+.instrument img {
+  width: 60px;
+  margin: 20px;
+  border: 1px solid black;
+  box-shadow: 15px 10px 10px rgba(79, 94, 99, 0.5);
+}
+.popup-text {/*ホバーした時のポップアップ*/
+  display: none; /* 最初は非表示 */
+  position:relative; /* 画像の下に配置 */
+  bottom: 0; /* 画像の下部に表示 */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(255, 255, 255); 
+  color: black;
+  padding: 10px;
+  border:2px double black;
+}
+
+.instrument:hover .popup-text {
+  display:grid;
+}
+.instrument:hover {
+  cursor: pointer;
+}
+
+
+/************discographyページ************/
+.main_contents {
+  width: 70%;
+  margin:200px auto 100px auto;
+  padding-bottom: 50px;
+  border-bottom:1px solid rgba(169, 195, 203, 0.6);
+}
+.c_color {
+  color: #ff0095;
+}
+
+.haiti_1 {
+  width: fit-content;
+}
+.album_title_2 {
+  margin-bottom: 10px;
+}
+.album_title_2 a {
+  color: #000;
+  text-decoration: none;
+}
+.album_title_2 a:hover {
+  color: rgba(112, 124, 128, 0.6);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.album_box {
+  width:100%;
+  display: flex;
+  margin-top: 100px;
+}
+.album_box img {
+  width:340px;
+  object-fit: contain;
+  border:0.5px solid #ff0095;
+}
+.album_box img:hover {
+  opacity: 0.7;
+  transition: 0.4s;
+}
+
+.contents_date {
+  margin: 30px auto 40px 60px;
+  font-size: 15px;
+}
+.solo {
+  margin-left: 30px;
+  line-height: 1.4;
+}
+
+.release h6{
+  color: rgba(112, 124, 128, 0.7);
+  font-size: 80%;
+}
+.explanation {
+  margin-left: 60px;
+}
+.explanation p {
+  line-height: 3.0;
+}
+.menu_box {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/***冬世のマジックへと飛ぶリンク***/
+.link a {
+  color: rgb(49, 49, 101);
+}
+.link a:hover {
+  color: rgba(175, 9, 64, 0.7);
+  transition: 0.5;
+}
+/***濡れゆく私小説,PULSATEの要素***/
+.chenge_1 {
+  display: flex;
+  justify-content: space-around;
+}
+.chenge_1 ol {
+  line-height:1.4;
+}
+
+
+
+
+
+
+
+/**********newsページ用設定*********/
+.news_main {
+  width: 70%;
+  margin: 200px auto 100px auto;
+}
+.tyuui {
+  text-align: right;
+  margin-top: 5px;
+  margin-bottom: 100px;
+  color: rgba(87,87,87,0.5);
+}
+.news_box {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  margin: 50px auto;
+  padding: 60px auto;
+  align-items: center;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius:100px ;
+}
+.news_box:hover {
+  background-color: rgba(112, 124, 128, 0.1);
+  transition: 0.5s;
+}
+.news_day {
+  text-align: center;
+  padding: 20px;
+  margin-left:20px ;
+  font-weight: bold;
+}
+.a_1 {
+  font-size: 12px;
+  margin: 10px auto;
+}
+.a_2 {
+  color: rgb(148, 209, 228);
+  margin: 10px auto;
+  font-size: 20px;
+}
+.news_contents {
+  padding: 20px;
+}
+.news_contents a{
+  color: inherit;
+  text-decoration:none;
+}
+.news_contents a:hover {
+  color: rgb(255, 91, 184);
+  transition: 0.3s;
+}
+
+
+/* スクロール後のヘッダー */
+.scrolled {
+  background-color: rgb(255, 255, 255,0.9);
+  transition: background-color 0.3s ease;
+}
+
+
+
